@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
 
@@ -30,7 +29,7 @@ void main () {
     char argv[10][255];
     char buffer[2550];
     while (1) {
-        printf("RECURSION@MACHINE:~$ ");
+        printf("RECURSION@MACHINE-972:~$ ");
         gets(buffer);
         int cant_arg = convert_buffer_a_argv(buffer, argv);
         pid_t pid = fork();
@@ -45,5 +44,4 @@ void main () {
                 waitpid(pid, NULL, 0);
         }
     }
-    free(argv);
 }
